@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
+using System.Data;
 
 namespace StudentComment.Models
 {
@@ -7,6 +8,8 @@ namespace StudentComment.Models
     public class ApplicationUser : IdentityUser
     {
         public string Picture { get; set; }
+        public string Name { get; set; }
+        public string SurName { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

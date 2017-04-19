@@ -1,0 +1,41 @@
+﻿@model IEnumerable<StudentComment.Models.Student>
+    @{
+        ViewBag.Title = "List";
+    }
+
+    <h2>Öğrenci Listesi</h2>
+
+<div class="row">
+    <table class="table">
+        <tr>
+            <th>Tc Kimlik</th>
+            <th>Adı</th>
+            <th>Soyadi</th>
+            <th>Resmi</th>
+            <th>Bölümü</th>
+            <th>Sınıf</th>
+            <th>Numarası</th>
+            <th>
+                @Html.ActionLink("Ekle","Add")
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.SurName</td>
+                <td>@item.Picture</td>
+                <td>@item.Department</td>
+                <td>@item.Class</td>
+                <td>@item.Number</td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Add", new { id = @item.Id }) |
+                    @Html.ActionLink("Sil", "Delete", new { id = @item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+   
