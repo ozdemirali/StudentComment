@@ -15,6 +15,6 @@ namespace StudentComment.Models
         public string Picture { get; set; }
         public string Department { get; set; }
         public string Class { get; set; }
-        public int Number { get; set; }
+        public string Number { get; set; }
     }
 }

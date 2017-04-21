@@ -203,6 +203,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Img\bad.png" />
+    <Content Include="Img\good.png" />
     <Content Include="Img\images.png" />
     <Content Include="Img\photo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
@@ -270,6 +272,10 @@
     <Content Include="Views\AdminStudent\Index.cshtml" />
     <Content Include="Views\Comment\Index.cshtml" />
     <Content Include="Views\Comment\List.cshtml" />
+    <Content Include="Views\Comment\AddComment.cshtml" />
+    <Content Include="Views\Comment\List2.cshtml" />
+    <Content Include="Views\Comment\List3.cshtml" />
+    <Content Include="Views\Comment\Listyeni.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
