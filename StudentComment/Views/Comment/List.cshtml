@@ -8,14 +8,14 @@
 <div class="row">
     @foreach (var item in Model)
     {
-        <a href="/Comment/AddComment/@item.Id" style="text-decoration:none;color:#000000">
+        <a href="/Comment/Add/@item.Id" style="text-decoration:none;color:#000000">
             <div>
                 <table class="table" style="margin:0">
                     <tr>
                         <td rowspan="2" style="text-align:center;vertical-align:middle">
                             <img src="~/Img/photo.jpg" class="img-circle" style="width:50px;height:50px;" />
                         </td>
-                        <td colspan="2">@Html.DisplayFor(modelItem => item.Name) &nbsp @Html.DisplayFor(modelItem => item.SurName) &nbsp (@Html.DisplayFor(modelItem => item.Number))</td>
+                        <td colspan="2">@Html.DisplayFor(modelItem => item.Name)  @Html.DisplayFor(modelItem => item.SurName) (@Html.DisplayFor(modelItem => item.Number))</td>
                     </tr>
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Class)</td>
@@ -28,26 +28,3 @@
     }
 </div>
   
-@*<div class="row">
-
-  
-
-    <table class="table">
-
-        @foreach (var item in Model)
-        {
-           <tr>
-               <td rowspan="2" style="text-align:center;vertical-align:middle">
-                   <img src="~/Img/photo.jpg" class="img-circle" style="width:50px;height:50px;" />
-               </td>
-               <td colspan="2">@Html.DisplayFor(modelItem => item.Name) &nbsp @Html.DisplayFor(modelItem => item.SurName)</td>
-           </tr>
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.Class)</td>
-                <td>@Html.DisplayFor(modelItem => item.Department)</td>
-            </tr>    
-        }
-
-    </table>
-</div>*@
-   

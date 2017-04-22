@@ -1,0 +1,107 @@
+﻿@model StudentComment.Models.Student
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+
+    <table class="table">
+        <tr>
+            <td colspan="4" style="text-align:center;vertical-align:central">
+                <img src="~/Img/photo.jpg" class="img-circle" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" style="text-align:center">
+                @Model.Name @Model.SurName @Model.Class
+                <input id="studentId" hidden value="@Model.Id" />
+            </td>
+        </tr>
+        @foreach (var item in Model.Comments)
+        {
+            <tr>
+                <td>
+                    <img src="~/Img/photo.jpg" class="img-circle" style="width:50px;" /><br />
+                    <label style="text-align:center;margin:0;font-weight:normal">@Html.DisplayFor(modelItem => item.TeacherName)</label>
+                </td>
+                <td style="text-align:center;vertical-align:middle">
+                    @Html.DisplayFor(modelItem => item.Explanation)
+                </td>
+                <td style="text-align:center;vertical-align:middle">
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td style="text-align:center;vertical-align:middle">
+                    @if (item.Status == "Olumlu")
+                    {
+                        <img class="img-circle" src="~/Img/good.png" style="height:25px; width:25px" />
+                    }
+                    else
+                    {
+                        <img class="img-circle" src="~/Img/bad.png" style="height:25px; width:25px" />
+                    }
+
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="4" style="text-align:center">
+                <input type="submit" value="+" class="btn btn-default" data-toggle="modal" data-target="#myModal" />
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Öğrenci Davranışı Ekleme</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="form-control" type="text" id="explanation" />
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="checkbox" id="toggle-two" checked data-toggle="toggle" data-on="+" data-off="-" style="width:300px">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="send()">Ekle</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+        function send() {
+            var data = {
+                studentId: $("#studentId").val(),
+                explanation: $("#explanation").val(),
+                status: $("#toggle-two").val()
+            }
+            $.ajax({
+                type: "POST",
+               data: data,
+                success: function () {
+                    window.location.reload();
+                }               
+            });
+        }
+
+    </script>
+}

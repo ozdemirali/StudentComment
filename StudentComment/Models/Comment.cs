@@ -18,6 +18,8 @@ namespace StudentComment.Models
         public DateTime CreateDate { get; set; }
         [Column(TypeName = "datetime2")]
         public DateTime CreateTime { get; set; }
+        [ForeignKey("Students")]
+        public string StudentId { get; set; }
         public virtual Student Students { get; set; }
         public string TeacherName { get; set; }
         public string TeacherPicture { get; set; }

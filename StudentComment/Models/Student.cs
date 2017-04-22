@@ -16,5 +16,7 @@ namespace StudentComment.Models
         public string Department { get; set; }
         public string Class { get; set; }
         public string Number { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
+
     }
 }

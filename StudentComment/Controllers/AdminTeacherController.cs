@@ -10,6 +10,7 @@ using System.Data.Entity;
 
 namespace StudentComment.Controllers
 {
+    [Authorize(Roles="Admin")]
     public class AdminTeacherController : Controller
     {
          public AdminTeacherController()
