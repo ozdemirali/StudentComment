@@ -13,6 +13,7 @@
                 <table class="table" style="margin:0">
                     <tr>
                         <td rowspan="2" style="text-align:center;vertical-align:middle">
+                            @*<img src="@item.Picture" class="img-circle" style="width:50px;height:50px;" />*@
                             <img src="~/Img/photo.jpg" class="img-circle" style="width:50px;height:50px;" />
                         </td>
                         <td colspan="2">@Html.DisplayFor(modelItem => item.Name)  @Html.DisplayFor(modelItem => item.SurName) (@Html.DisplayFor(modelItem => item.Number))</td>
@@ -24,7 +25,12 @@
                 </table>
             </div>
         </a>
-      
     }
+</div>
+<hr />
+<div class="row" style="text-align:center">
+    <a href="/Comment/" class="btn btn-default">
+        Geri
+    </a>
 </div>
   

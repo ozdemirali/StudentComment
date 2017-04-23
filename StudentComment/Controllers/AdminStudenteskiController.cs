@@ -3,34 +3,37 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace StudentComment.Controllers
 {
-    public class AdminStudentControllereski : Controller
+    public class AdminStudenteskiController : Controller
     {
         //
         // GET: /AdminStudent/
         public ActionResult List()
         {
-            using (var db=new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 var model = db.Students.ToList();
                 return View(model);
             }
-           
+
         }
 
         public ActionResult Add(string Id)
         {
+
+
             if (!string.IsNullOrEmpty(Id))
             {
                 using (var db = new ApplicationDbContext())
                 {
                     var model = db.Students.Find(Id);
-                    return View("edit",model);
+                    return View("edit", model);
                 }
             }
             return View(new Student());
@@ -39,8 +42,21 @@ namespace StudentComment.Controllers
         [HttpPost]
         public ActionResult Add(Student model)
         {
-            using (var db=new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
+
+                if (Request.Files.Count > 0)
+                {
+                    var file = Request.Files[0];
+
+                    if (file != null && file.ContentLength > 0)
+                    {
+                        var fileName = Path.GetFileName(DateTime.Now.Ticks.ToString() + file.FileName);
+                        var path = Path.Combine(Server.MapPath("~/students/"), fileName);
+                        file.SaveAs(path);
+                        model.Picture = "../students/" + fileName;
+                    }
+                }
                 try
                 {
                     db.Students.Add(model);
@@ -55,11 +71,11 @@ namespace StudentComment.Controllers
 
             return View(new Student());
         }
-        
+
         [HttpPost]
         public ActionResult Edit(Student model)
         {
-            using (var db=new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 try
                 {
@@ -102,7 +118,7 @@ namespace StudentComment.Controllers
 
         public ActionResult Delete(string Id)
         {
-            using (var db=new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 Student student = db.Students.Find(Id);
                 return View(student);
@@ -112,11 +128,11 @@ namespace StudentComment.Controllers
 
 
 
-        
-      
+
+
         public ActionResult DeleteConfirmed(string Id)
         {
-            using (var db=new ApplicationDbContext())
+            using (var db = new ApplicationDbContext())
             {
                 try
                 {
@@ -133,5 +149,5 @@ namespace StudentComment.Controllers
             }
         }
 
-	}
+    }
 }

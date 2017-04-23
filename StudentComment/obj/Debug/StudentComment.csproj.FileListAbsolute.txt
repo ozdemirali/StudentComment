@@ -59,3 +59,4 @@ C:\Proje\StudentComment\StudentComment\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Proje\StudentComment\StudentComment\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Proje\StudentComment\StudentComment\obj\Debug\StudentComment.dll
 C:\Proje\StudentComment\StudentComment\obj\Debug\StudentComment.pdb
+C:\Proje\StudentComment\StudentComment\obj\Debug\StudentComment.csprojResolveAssemblyReference.cache

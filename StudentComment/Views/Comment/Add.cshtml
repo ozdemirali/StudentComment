@@ -4,11 +4,7 @@
     ViewBag.Title = "Add";
 }
 
-<h2>Add</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <div class="row">
 
     <table class="table">
@@ -26,7 +22,7 @@
         @foreach (var item in Model.Comments)
         {
             <tr>
-                <td>
+                <td style="text-align:center;vertical-align:central">
                     <img src="~/Img/photo.jpg" class="img-circle" style="width:50px;" /><br />
                     <label style="text-align:center;margin:0;font-weight:normal">@Html.DisplayFor(modelItem => item.TeacherName)</label>
                 </td>
@@ -49,12 +45,19 @@
                 </td>
             </tr>
         }
-        <tr>
-            <td colspan="4" style="text-align:center">
-                <input type="submit" value="+" class="btn btn-default" data-toggle="modal" data-target="#myModal" />
-            </td>
-        </tr>
     </table>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-6" style="text-align:left">
+        <input type="submit" value="Ekle" class="btn btn-default" data-toggle="modal" data-target="#myModal" />
+
+    </div>
+    <div class="col-xs-6" style="text-align:right">
+        <a href="/Comment/" class="btn btn-default">
+            Geri
+        </a>
+    </div>
 </div>
 
 <div id="myModal" class="modal fade" role="dialog">
@@ -72,13 +75,21 @@
                     <div class="col-sm-6">
                         <input class="form-control" type="text" id="explanation" />
                     </div>
-                    <div class="col-sm-6">
-                        <input type="checkbox" id="toggle-two" checked data-toggle="toggle" data-on="+" data-off="-" style="width:300px">
+                    <div class="col-sm-6" style="text-align:center">
+                        <label class="radio-inline"><input type="radio" name="optradio" value="Olumlu" checked><img class="img-circle" src="~/Img/good.png" style="height:25px; width:25px" /></label>
+                        <label class="radio-inline"><input type="radio" name="optradio" value="Olumsuz"><img class="img-circle" src="~/Img/bad.png" style="height:25px; width:25px" /></label>
+                        @*<input type="checkbox" id="toggle-two" checked data-toggle="toggle" data-on="+" data-off="-" style="width:300px">*@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="send()">Ekle</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+
+                    <table style="width:100%" >
+                        <tr>
+                            <td style="text-align:left"><button type="button" class="btn btn-default" data-dismiss="modal" onclick="send()">Ekle</button> </td>
+                            <td style="text-align:right"><button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button> </td>
+                        </tr>
+                    </table>
+                   
                 </div>
             </div>
 
@@ -92,7 +103,7 @@
             var data = {
                 studentId: $("#studentId").val(),
                 explanation: $("#explanation").val(),
-                status: $("#toggle-two").val()
+                status: $("input[name=optradio]:checked").val()
             }
             $.ajax({
                 type: "POST",
@@ -101,6 +112,7 @@
                     window.location.reload();
                 }               
             });
+            $("#explanation").val("");
         }
 
     </script>

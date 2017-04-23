@@ -53,7 +53,7 @@ namespace StudentComment.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", "Geçersiz kullanıcı adı veya şifre.");
                 }
             }
 
@@ -83,7 +83,7 @@ namespace StudentComment.Controllers
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Comment");
                 }
                 else
                 {
@@ -119,10 +119,10 @@ namespace StudentComment.Controllers
         public ActionResult Manage(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-                : message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
-                : message == ManageMessageId.Error ? "An error has occurred."
+                message == ManageMessageId.ChangePasswordSuccess ? "Şifreniz değiştirildi."
+                : message == ManageMessageId.SetPasswordSuccess ? "Şifreniz ayarlandı."
+                : message == ManageMessageId.RemoveLoginSuccess ? "Harici giriş kaldırıldı."
+                : message == ManageMessageId.Error ? "Bir hata oluştu."
                 : "";
             ViewBag.HasLocalPassword = HasPassword();
             ViewBag.ReturnUrl = Url.Action("Manage");
@@ -290,7 +290,7 @@ namespace StudentComment.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Comment");
         }
 
         //
@@ -372,7 +372,7 @@ namespace StudentComment.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Comment");
             }
         }
 

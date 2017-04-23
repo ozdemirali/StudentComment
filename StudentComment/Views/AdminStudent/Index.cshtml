@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<StudentComment.Models.Student>
 
-@{
+@*@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Index</h2>*@
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -29,7 +29,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Number)
         </th>
-        <th></th>
+        <th>@Html.ActionLink("Yeni Öğrenci", "Create")</th>
     </tr>
 
 @foreach (var item in Model) {
