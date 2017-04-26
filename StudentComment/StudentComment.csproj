@@ -279,7 +279,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Students\" />
+    <Folder Include="Images\Students\" />
+    <Folder Include="Images\Teachers\" />
     <Folder Include="Views\Default1\" />
   </ItemGroup>
   <ItemGroup>

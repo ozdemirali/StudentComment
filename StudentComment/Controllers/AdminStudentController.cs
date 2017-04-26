@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using StudentComment.Models;
+using System.IO;
 
 namespace StudentComment.Controllers
 {
@@ -46,10 +47,18 @@ namespace StudentComment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="Id,Name,SurName,Picture,Department,Class,Number")] Student student)
+        public ActionResult Create([Bind(Include = "Id,Name,SurName,Picture,Department,Class,Number")] Student student, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+                if (file!=null && file.ContentLength>0)
+                {
+                    string[] dizi = file.FileName.Split('.');
+                    var fileName = Path.GetFileName(DateTime.Now.Ticks.ToString() +"."+ dizi[1]);
+                    var path = Path.Combine(Server.MapPath("~/Images/Students/"), fileName);
+                    file.SaveAs(path);
+                    student.Picture = "../Images/Students/" + fileName;
+                }
                 db.Students.Add(student);
                 db.SaveChanges();
                 return RedirectToAction("Index");
