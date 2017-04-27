@@ -87,7 +87,7 @@ namespace StudentComment.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="Id,Name,SurName,Picture,Department,Class,Number")] Student student)
+        public ActionResult Edit([Bind(Include = "Id,Name,SurName,Picture,Department,Class,Number")] Student student)
         {
             if (ModelState.IsValid)
             {

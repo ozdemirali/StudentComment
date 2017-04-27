@@ -12,22 +12,28 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            <label>Adı</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SurName)
+            @*@Html.DisplayNameFor(model => model.SurName)*@
+            <label>Soyadı</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Picture)
+            @*@Html.DisplayNameFor(model => model.Picture)*@
+            <label>Resmi</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Department)
+            @*@Html.DisplayNameFor(model => model.Department)*@
+            <label>Bölümü</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Class)
+            @*@Html.DisplayNameFor(model => model.Class)*@
+            <label>Sınıfı</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Number)
+            @*@Html.DisplayNameFor(model => model.Number)*@
+            <label>Numarası</label>
         </th>
         <th>@Html.ActionLink("Yeni Öğrenci", "Create")</th>
     </tr>
@@ -53,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.Number)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

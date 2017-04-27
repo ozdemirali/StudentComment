@@ -10,7 +10,17 @@
     <table class="table">
         <tr>
             <td colspan="4" style="text-align:center;vertical-align:central">
-                <img src="~/Img/photo.jpg" class="img-circle" />
+                @if (@Model.Picture!=null)
+                {
+                    <img src="@Model.Picture" class="img-circle" />
+                    
+                }
+                else
+                {
+                <img src="~/Images/General/photo.jpg" class="img-circle" />
+                        
+                }
+
             </td>
         </tr>
         <tr>
@@ -23,7 +33,16 @@
         {
             <tr>
                 <td style="text-align:center;vertical-align:central">
-                    <img src="~/Img/photo.jpg" class="img-circle" style="width:50px;" /><br />
+                  @if (@item.TeacherPicture!=null)
+                    {
+                      <img src="@item.TeacherPicture" class="img-circle" style="width:50px;" />
+                    }
+                    else
+                    {
+                         <img src="~/Images/General/photo.jpg" class="img-circle" style="width:50px;" />    
+                    }
+                    
+                   <br />
                     <label style="text-align:center;margin:0;font-weight:normal">@Html.DisplayFor(modelItem => item.TeacherName)</label>
                 </td>
                 <td style="text-align:center;vertical-align:middle">
@@ -35,11 +54,11 @@
                 <td style="text-align:center;vertical-align:middle">
                     @if (item.Status == "Olumlu")
                     {
-                        <img class="img-circle" src="~/Img/good.png" style="height:25px; width:25px" />
+                        <img class="img-circle" src="~/Images/General/good.png" style="height:25px; width:25px" />
                     }
                     else
                     {
-                        <img class="img-circle" src="~/Img/bad.png" style="height:25px; width:25px" />
+                        <img class="img-circle" src="~/Images/General/bad.png" style="height:25px; width:25px" />
                     }
 
                 </td>
@@ -76,8 +95,8 @@
                         <input class="form-control" type="text" id="explanation" />
                     </div>
                     <div class="col-sm-6" style="text-align:center">
-                        <label class="radio-inline"><input type="radio" name="optradio" value="Olumlu" checked><img class="img-circle" src="~/Img/good.png" style="height:25px; width:25px" /></label>
-                        <label class="radio-inline"><input type="radio" name="optradio" value="Olumsuz"><img class="img-circle" src="~/Img/bad.png" style="height:25px; width:25px" /></label>
+                        <label class="radio-inline"><input type="radio" name="optradio" value="Olumlu" checked><img class="img-circle" src="~/Images/General/good.png" style="height:25px; width:25px" /></label>
+                        <label class="radio-inline"><input type="radio" name="optradio" value="Olumsuz"><img class="img-circle" src="~/Images/General/bad.png" style="height:25px; width:25px" /></label>
                         @*<input type="checkbox" id="toggle-two" checked data-toggle="toggle" data-on="+" data-off="-" style="width:300px">*@
                     </div>
                 </div>
@@ -114,6 +133,5 @@
             });
             $("#explanation").val("");
         }
-
     </script>
 }

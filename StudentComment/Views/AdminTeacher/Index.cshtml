@@ -10,16 +10,20 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model=>model.UserName)
+            @*@Html.DisplayNameFor(model=>model.UserName)*@
+            <label>Kullanıcı Adı</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            <label>Adı</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SurName)
+            @*@Html.DisplayNameFor(model => model.SurName)*@
+            <label>Soyadı</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Picture)
+            @*@Html.DisplayNameFor(model => model.Picture)*@
+            <label>Resmi</label>
         </th>
        
         <th>
@@ -43,8 +47,8 @@
         </td>
        
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

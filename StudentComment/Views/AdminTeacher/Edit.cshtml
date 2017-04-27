@@ -11,13 +11,14 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        @*<h4>TeacherViewModel</h4>*@
+        <h4>Kullanıcının</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.Id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.UserName, new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Kullanıcı Adı</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UserName)
                 @Html.ValidationMessageFor(model => model.UserName)
@@ -25,7 +26,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.Name, new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Adı</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name)
                 @Html.ValidationMessageFor(model => model.Name)
@@ -33,7 +35,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SurName, new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.SurName, new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Soyadı</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.SurName)
                 @Html.ValidationMessageFor(model => model.SurName)
@@ -41,7 +44,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Picture, new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.Picture, new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Resmi</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Picture)
                 @Html.ValidationMessageFor(model => model.Picture)
@@ -49,7 +53,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.OldPassword, new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.OldPassword, new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Geçerli Sifresi</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.OldPassword)
                 @Html.ValidationMessageFor(model => model.OldPassword)
@@ -57,7 +62,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NewPassword, new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.NewPassword, new { @class = "control-label col-md-2" })*@
+            <label class="control-label col-md-2">Yeni Şifresi</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NewPassword)
                 @Html.ValidationMessageFor(model => model.NewPassword)
@@ -66,12 +72,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Kaydet" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Geriye Dön", "Index")
 </div>

@@ -11,7 +11,8 @@
 	<hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @*@Html.DisplayNameFor(model => model.Name)*@
+            <label>Adı</label>
         </dt>
 
         <dd>
@@ -19,7 +20,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.SurName)
+            @*@Html.DisplayNameFor(model => model.SurName)*@
+            <label>Soyadı</label>
         </dt>
 
         <dd>
@@ -27,7 +29,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Picture)
+            @*@Html.DisplayNameFor(model => model.Picture)*@
+            <label>Resmi</label>
         </dt>
 
         <dd>
@@ -35,7 +38,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Department)
+            @*@Html.DisplayNameFor(model => model.Department)*@
+            <label>Bölümü</label>
         </dt>
 
         <dd>
@@ -43,7 +47,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Class)
+            @*@Html.DisplayNameFor(model => model.Class)*@
+            <label>Sınıfı</label>
         </dt>
 
         <dd>
@@ -51,7 +56,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Number)
+            @*@Html.DisplayNameFor(model => model.Number)*@
+            <label>Numarası</label>
         </dt>
 
         <dd>
@@ -61,6 +67,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Geriye Dön", "Index")
 </p>

@@ -7,7 +7,7 @@
 <h2>Create</h2>*@
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "AdminTeacher", FormMethod.Post, new { enctype = "multipart/form-data" })) 
 {
     @Html.AntiForgeryToken()
     
@@ -17,7 +17,9 @@
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UserName, new { @class = "col-md-2" })
+            @*@Html.LabelFor(model => model.UserName, new { @class = "" })*@
+            <label class="col-md-2">Kullanıcı Adi</label>
+
             <div class="col-md-10">
                 @Html.EditorFor(model => model.UserName)
                 @Html.ValidationMessageFor(model => model.UserName)
@@ -25,7 +27,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Name, new { @class = "col-md-2" })
+            @*@Html.LabelFor(model => model.Name, new { @class = "col-md-2" })*@
+            <label class="col-md-2">Adı</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Name)
                 @Html.ValidationMessageFor(model => model.Name)
@@ -33,7 +36,8 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SurName, new { @class = "col-md-2" })
+            @*@Html.LabelFor(model => model.SurName, new { @class = "col-md-2" })*@
+            <label class="col-md-2">Soyadı</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.SurName)
                 @Html.ValidationMessageFor(model => model.SurName)
@@ -41,29 +45,32 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Picture, new { @class = "col-md-2" })
+            @*@Html.LabelFor(model => model.Picture, new { @class = "col-md-2" })*@
+            <label class="col-md-2">Resmi</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Picture)
-                @Html.ValidationMessageFor(model => model.Picture)
+                <input type="file" name="file" />
+                @*@Html.EditorFor(model => model.Picture)
+                @Html.ValidationMessageFor(model => model.Picture)*@
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Password, new { @class = "col-md-2" })
+            @*@Html.LabelFor(model => model.NewPassword, new { @class = "col-md-2" })*@
+            <label class="col-md-2">Şifresi</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Password)
+                @Html.EditorFor(model => model.NewPassword)
                 @Html.ValidationMessageFor(model => model.NewPassword)
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Kaydet" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Geriye Dön", "Index")
 </div>
