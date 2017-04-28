@@ -179,10 +179,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminStudentController.cs" />
-    <Compile Include="Controllers\AdminStudenteskiController.cs" />
     <Compile Include="Controllers\AdminTeacherController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
-    <Compile Include="Controllers\Default12Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,6 +205,8 @@
     <Content Include="Images\General\bad.png" />
     <Content Include="Images\General\good.png" />
     <Content Include="Images\General\photo.jpg" />
+    <Content Include="Images\Teachers\636289285541725554.jpg" />
+    <Content Include="Images\Teachers\636289318240167674.jpg" />
     <Content Include="Scripts\bootstrap-toggle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -249,23 +249,10 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\AdminStudenteski\List.cshtml" />
-    <Content Include="Views\AdminStudenteski\Add.cshtml" />
-    <Content Include="Views\AdminStudenteski\Add22.cshtml" />
-    <Content Include="Views\AdminStudenteski\edit.cshtml" />
-    <Content Include="Views\Default12\Create.cshtml" />
-    <Content Include="Views\Default12\Delete.cshtml" />
-    <Content Include="Views\Default12\Details.cshtml" />
-    <Content Include="Views\Default12\Edit.cshtml" />
-    <Content Include="Views\Default12\Index.cshtml" />
-    <Content Include="Views\AdminStudenteski\Delete.cshtml" />
     <Content Include="Views\AdminTeacher\Index.cshtml" />
     <Content Include="Views\AdminTeacher\Create.cshtml" />
     <Content Include="Views\AdminTeacher\Edit.cshtml" />
     <Content Include="Views\AdminTeacher\Delete.cshtml" />
-    <Content Include="Views\AdminStudenteski\Create.cshtml" />
-    <Content Include="Views\AdminStudenteski\Details.cshtml" />
-    <Content Include="Views\AdminStudenteski\Index.cshtml" />
     <Content Include="Views\AdminStudent\Create.cshtml" />
     <Content Include="Views\AdminStudent\Delete.cshtml" />
     <Content Include="Views\AdminStudent\Details.cshtml" />
@@ -273,14 +260,11 @@
     <Content Include="Views\AdminStudent\Index.cshtml" />
     <Content Include="Views\Comment\Index.cshtml" />
     <Content Include="Views\Comment\List.cshtml" />
-    <Content Include="Views\Comment\AddComment.cshtml" />
     <Content Include="Views\Comment\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Students\" />
-    <Folder Include="Images\Teachers\" />
-    <Folder Include="Views\Default1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

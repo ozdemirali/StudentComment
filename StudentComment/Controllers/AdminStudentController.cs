@@ -57,7 +57,7 @@ namespace StudentComment.Controllers
                     var fileName = Path.GetFileName(DateTime.Now.Ticks.ToString() +"."+ dizi[1]);
                     var path = Path.Combine(Server.MapPath("~/Images/Students/"), fileName);
                     file.SaveAs(path);
-                    student.Picture = "../Images/Students/" + fileName;
+                    student.Picture = "/Images/Students/" + fileName;
                 }
                 db.Students.Add(student);
                 db.SaveChanges();

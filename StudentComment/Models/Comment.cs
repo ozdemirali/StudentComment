@@ -16,8 +16,7 @@ namespace StudentComment.Models
 
         [Column(TypeName = "datetime2")]
         public DateTime CreateDate { get; set; }
-        [Column(TypeName = "datetime2")]
-        public DateTime CreateTime { get; set; }
+        
         [ForeignKey("Students")]
         public string StudentId { get; set; }
         public virtual Student Students { get; set; }

@@ -97,6 +97,7 @@ namespace StudentComment.Controllers
                 var userData = db.Users.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
                 data.TeacherName = userData.Name+" "+userData.SurName;
                 data.TeacherPicture = userData.Picture;
+                data.CreateDate = DateTime.Now;
                 db.Comments.Add(data);
                 db.SaveChanges();
             }

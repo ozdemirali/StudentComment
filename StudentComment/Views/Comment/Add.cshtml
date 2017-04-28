@@ -12,12 +12,12 @@
             <td colspan="4" style="text-align:center;vertical-align:central">
                 @if (@Model.Picture!=null)
                 {
-                    <img src="@Model.Picture" class="img-circle" />
+                    <img src="@Model.Picture" class="img-circle"  style="width:150px;height:150px" />
                     
                 }
                 else
                 {
-                <img src="~/Images/General/photo.jpg" class="img-circle" />
+                <img src="~/Images/General/photo.jpg" class="img-circle" style=" width:150px;height:150px" />
                         
                 }
 
@@ -35,13 +35,13 @@
                 <td style="text-align:center;vertical-align:central">
                   @if (@item.TeacherPicture!=null)
                     {
-                      <img src="@item.TeacherPicture" class="img-circle" style="width:50px;" />
+                      <img src="@item.TeacherPicture" class="img-circle" style="width:50px;height:50px" />
                     }
                     else
                     {
-                         <img src="~/Images/General/photo.jpg" class="img-circle" style="width:50px;" />    
+                         <img src="~/Images/General/photo.jpg" class="img-circle" style="width:50px;height:50px" />    
                     }
-                    
+
                    <br />
                     <label style="text-align:center;margin:0;font-weight:normal">@Html.DisplayFor(modelItem => item.TeacherName)</label>
                 </td>
@@ -49,7 +49,10 @@
                     @Html.DisplayFor(modelItem => item.Explanation)
                 </td>
                 <td style="text-align:center;vertical-align:middle">
-                    @Html.DisplayFor(modelItem => item.CreateDate)
+                    @*@Html.DisplayFor(modelItem => item.CreateDate,"ShortDateTime")*@
+                    @Html.ValueFor(modelItem => item.CreateDate, "{0:dd/MM/yyyy}")
+
+
                 </td>
                 <td style="text-align:center;vertical-align:middle">
                     @if (item.Status == "Olumlu")
